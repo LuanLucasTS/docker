@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8880:80/tcp"
+    environment:
+      TZ: 'America/Campo_Grande'
+      WEBPASSWORD: 'Jj7sQ77hH45CCskEHVyfQsWX'
+    volumes:
+      - '/storage/pihole/etc-pihole:/etc/pihole'
+      - '/storage/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
+    shm_size: '512m'  # Aumenta a memória compartilhada para 512MB
+    restart: always
