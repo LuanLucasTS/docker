@@ -1,0 +1,29 @@
+# 🚢 Comandos para Containers
+
+# Criar e executar container
+docker run -d --name meu-container nginx
+
+# Executar com porta exposta
+docker run -d -p 8080:80 nginx
+
+# Entrar em container interativo
+docker exec -it meu-container bash
+
+# Parar container
+docker stop meu-container
+
+# Iniciar container parado
+docker start meu-container
+
+# Reiniciar container
+docker restart meu-container
+
+# Remover container
+docker rm meu-container
+
+# Ver logs
+docker logs -f meu-container
+
+# Copiar arquivos entre host e container
+docker cp arquivo.txt meu-container:/tmp/
+docker cp meu-container:/tmp/arquivo.txt ./

@@ -1,0 +1,25 @@
+# ⚙️ Comandos Docker Compose
+
+# Subir containers definidos em docker-compose.yml
+docker compose up -d
+
+# Derrubar containers
+docker compose down
+
+# Derrubar e remover volumes
+docker compose down -v
+
+# Listar containers gerenciados pelo Compose
+docker compose ps
+
+# Ver logs de todos os serviços
+docker compose logs -f
+
+# Recriar containers após alteração
+docker compose up -d --build
+
+# Escalar número de instâncias
+docker compose up -d --scale web=3
+
+# Executar comando em um container gerenciado pelo Compose
+docker compose exec web bash

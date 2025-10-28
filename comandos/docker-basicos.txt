@@ -1,0 +1,32 @@
+# 🧩 Comandos Básicos do Docker
+
+# Verificar versão e informações do Docker
+docker --version
+docker info
+
+# Listar containers em execução
+docker ps
+
+# Listar todos os containers (inclusive parados)
+docker ps -a
+
+# Listar imagens locais
+docker images
+
+# Parar todos os containers
+docker stop $(docker ps -q)
+
+# Remover todos os containers parados
+docker container prune
+
+# Remover todas as imagens não utilizadas
+docker image prune -a
+
+# Executar comando dentro de um container em execução
+docker exec -it <container_id> bash
+
+# Acompanhar logs de um container
+docker logs -f <container_id>
+
+# Ver consumo de recursos
+docker stats

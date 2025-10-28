@@ -1,0 +1,19 @@
+# 💾 Comandos de Volumes no Docker
+
+# Listar volumes existentes
+docker volume ls
+
+# Criar novo volume
+docker volume create meu-volume
+
+# Inspecionar volume
+docker volume inspect meu-volume
+
+# Remover volume
+docker volume rm meu-volume
+
+# Usar volume em container
+docker run -d -v meu-volume:/data nginx
+
+# Remover volumes não utilizados
+docker volume prune

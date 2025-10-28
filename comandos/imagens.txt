@@ -1,0 +1,25 @@
+# 🧱 Comandos para Imagens Docker
+
+# Listar imagens locais
+docker images
+
+# Baixar imagem do Docker Hub
+docker pull nginx
+
+# Criar imagem a partir de Dockerfile
+docker build -t minha-imagem .
+
+# Marcar (tag) uma imagem
+docker tag minha-imagem usuario/minha-imagem:latest
+
+# Enviar imagem para Docker Hub
+docker push usuario/minha-imagem:latest
+
+# Remover imagem
+docker rmi minha-imagem
+
+# Inspecionar imagem
+docker inspect minha-imagem
+
+# Limpar imagens não utilizadas
+docker image prune -a

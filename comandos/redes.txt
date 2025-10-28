@@ -1,0 +1,22 @@
+# 🌐 Comandos de Rede no Docker
+
+# Listar redes disponíveis
+docker network ls
+
+# Criar uma nova rede
+docker network create minha-rede
+
+# Inspecionar detalhes de uma rede
+docker network inspect minha-rede
+
+# Conectar container a uma rede
+docker network connect minha-rede <container_id>
+
+# Desconectar container de uma rede
+docker network disconnect minha-rede <container_id>
+
+# Remover rede
+docker network rm minha-rede
+
+# Criar container já conectado a uma rede específica
+docker run -d --name web --network minha-rede nginx
