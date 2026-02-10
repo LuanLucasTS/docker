@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm
+    restart: unless-stopped
+
+    ports:
+      - "3001:3001"
+
+    environment:
+      - STORAGE_DIR=/app/server/storage
+      - UID=1000
+      - GID=1000
+
+    volumes:
+      # Dados persistentes do AnythingLLM (TUDO fica aqui)
+      - ./storage:/app/server/storage
+
+      # Logs (opcional)
+      - ./logs:/app/server/logs
+
+      # Páginas do DokuWiki (somente leitura)
+      - /sistemas/dokuwiki/data/dokuwiki/data/pages:/dokuwiki-pages:ro
+
