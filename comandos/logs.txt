@@ -1,0 +1,5 @@
+docker logs CONTAINER            # View logs
+docker logs -f CONTAINER         # Follow logs (tail -f)
+docker logs --tail 100 CONTAINER # Last 100 lines
+docker logs --since 1h CONTAINER # Since 1 hour ago
+docker logs -t CONTAINER         # Show timestamps
