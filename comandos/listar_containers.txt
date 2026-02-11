@@ -1,0 +1,6 @@
+docker ps      # Running containers
+docker ps -a   # All containers
+docker ps -q   # Only IDs (quiet)
+docker ps -l   # Last created
+docker ps --filter "status=exited"
+docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
