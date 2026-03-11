@@ -1,0 +1,34 @@
+    volumes:
+      - ~/homeassistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    depends_on:
+      - mariadb
+
+  # Banco de Dados MariaDB
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: sua_senha_root
+      MYSQL_DATABASE: homeassistant
+      MYSQL_USER: hass_user
+      MYSQL_PASSWORD: sua_senha_db
+    volumes:
+      - ~/homeassistant/mariadb:/var/lib/mysql
+
+  # MQTT Broker (Mosquitto)
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ~/homeassistant/mosquitto/config:/mosquitto/config
+      - ~/homeassistant/mosquitto/data:/mosquitto/data
+      - ~/homeassistant/mosquitto/logs:/mosquitto/logs
